@@ -78,6 +78,10 @@ if __name__ == "__main__":
             codePath = "C:\\Users\\Kamalpreet Singh\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
 
+        elif 'open linkedin' in query:
+            webbrowser.open("https://www.linkedin.com/in/kamalpreet-singh-8558131a0/")
+            speak("Oppening your linked account")
+
 
 
 
