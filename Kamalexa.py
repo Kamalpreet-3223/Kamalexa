@@ -8,7 +8,7 @@ import os
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 
-engine.setProperty('voice', voices[0].id)
+engine.setProperty('voice', voices[1].id)
 
 def speak(audio):
     engine.say(audio)
@@ -85,6 +85,10 @@ if __name__ == "__main__":
         elif 'open facebook' in query:
             webbrowser.open("https://www.facebook.com/profile.php?id=100014358135907")
             speak("Opening Facebook")
+
+        elif 'open instagram' in query:
+            webbrowser.open("https://www.instagram.com/kamalpreet__singh__/")
+            speak("Opening Instagram")
 
 
 
