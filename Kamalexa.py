@@ -90,6 +90,12 @@ if __name__ == "__main__":
             webbrowser.open("https://www.instagram.com/kamalpreet__singh__/")
             speak("Opening Instagram")
 
+        elif 'how are you' in query:
+            speak("Sir I am Great")
+
+        elif 'your name' in query:
+            speak("Sir my name is Kamalexa")
+
 
 
 
