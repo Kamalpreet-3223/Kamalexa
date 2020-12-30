@@ -4,6 +4,7 @@ import datetime
 import wikipedia
 import webbrowser
 import os
+import pywhatkit
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
@@ -56,8 +57,18 @@ if __name__ == "__main__":
                 speak("According to wikipedia")
                 speak(results)
 
+##            elif 'experiment' in query:                               ## THIS IS DOING THE SAME THING AS THE ABOVE WIKIPEDIA IS DOING
+##                query = query.replace('experiment' , '')
+##                pywhatkit.info(query , lines = 2)
+
             elif 'open youtube' in query:
                 webbrowser.open("youtube.com")
+
+            elif 'play' in query:
+                query = query.replace('play' , '')
+                pywhatkit.playonyt(query)
+                print("Playing...")
+                speak("Playing...")
 
             elif 'open google' in query:
                 webbrowser.open("google.com")
