@@ -1,15 +1,17 @@
-import pyttsx3
-import speech_recognition as sr
 import datetime
-import wikipedia
-import webbrowser
 import os
-import pywhatkit
+import webbrowser
 
-engine=pyttsx3.init('sapi5')
-voices=engine.getProperty('voices')
+import pyttsx3
+import pywhatkit
+import speech_recognition as sr
+import wikipedia
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
 
 engine.setProperty('voice', voices[1].id)
+
 
 def speak(audio):
     engine.say(audio)
@@ -18,19 +20,20 @@ def speak(audio):
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
-    if (hour>0 and hour<12):
+    if (hour > 0 and hour < 12):
         speak("Good Morning!")
-    elif(hour>=12 and hour<18):
+    elif (hour >= 12 and hour < 18):
         speak("Good Afternoon!")
     else:
         speak("Good Evening")
     speak("I am Kamalexa here . Please tell me How may I help You")
 
+
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
-        
+
         audio = r.listen(source)
 
     try:
@@ -39,10 +42,11 @@ def takeCommand():
         print(f"User said: {query}\n")
 
     except Exception as e:
-        
+
         print("Say that again please...")
         return "None"
     return query
+
 
 if __name__ == "__main__":
     wishMe()
@@ -51,21 +55,21 @@ if __name__ == "__main__":
             query = takeCommand().lower()
             if 'wikipedia' in query:
                 speak("Searching Wikipedia...")
-                query = query.replace("wikipedia" , "")
+                query = query.replace("wikipedia", "")
                 results = wikipedia.summary(query, sentences=1)
                 print(results)
                 speak("According to wikipedia")
                 speak(results)
 
-##            elif 'experiment' in query:                               ## THIS IS DOING THE SAME THING AS THE ABOVE WIKIPEDIA IS DOING
-##                query = query.replace('experiment' , '')
-##                pywhatkit.info(query , lines = 2)
+            ##            elif 'experiment' in query:                               ## THIS IS DOING THE SAME THING AS THE ABOVE WIKIPEDIA IS DOING
+            ##                query = query.replace('experiment' , '')
+            ##                pywhatkit.info(query , lines = 2)
 
             elif 'open youtube' in query:
                 webbrowser.open("youtube.com")
 
             elif 'play' in query:
-                query = query.replace('play' , '')
+                query = query.replace('play', '')
                 pywhatkit.playonyt(query)
                 print("Playing...")
                 speak("Playing...")
@@ -109,41 +113,8 @@ if __name__ == "__main__":
                 speak("Sir my name is Kamalexa")
 
             elif 'search' in query:
-                query = query.replace("search" , "")
+                query = query.replace("search", "")
                 webbrowser.open(f"https://www.google.com/search?q=${query}")
 
         except Exception as e:
             print(e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
