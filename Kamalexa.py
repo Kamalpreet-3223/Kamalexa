@@ -6,6 +6,7 @@ import pyttsx3
 import pywhatkit
 import speech_recognition as sr
 import wikipedia
+import pyjokes
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -119,6 +120,10 @@ if __name__ == "__main__":
             elif 'search' in query:
                 query = query.replace("search", "")
                 webbrowser.open(f"https://www.google.com/search?q=${query}")
+            
+            elif 'tell me something funny' in query:
+                joke = speak(pyjokes.get_joke())
+                print(joke)
 
         except Exception as e:
             print(e)
