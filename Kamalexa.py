@@ -66,8 +66,6 @@ if __name__ == "__main__":
             ##                query = query.replace('experiment' , '')
             ##                pywhatkit.info(query , lines = 2)
 
-            elif 'open youtube' in query:
-                webbrowser.open("youtube.com")
 
             elif 'play' in query:
                 query = query.replace('play', '')
@@ -75,11 +73,6 @@ if __name__ == "__main__":
                 print("Playing...")
                 speak("Playing...")
 
-            elif 'open google' in query:
-                webbrowser.open("google.com")
-
-            elif 'open whatsapp' in query:
-                webbrowser.open("https://web.whatsapp.com/")
 
             elif 'play music' in query:
                 music_dir = 'D:\\Songs'
@@ -103,10 +96,7 @@ if __name__ == "__main__":
                 webbrowser.open("https://www.facebook.com/profile.php?id=100014358135907")
                 speak("Opening Facebook")
 
-            elif 'open twitter' in query:
-                webbrowser.open("https://www.twitter.com")
-                speak("Opening Twitter")
-
+            
             elif 'open instagram' in query:
                 webbrowser.open("https://www.instagram.com/kamalpreet__singh__/")
                 speak("Opening Instagram")
