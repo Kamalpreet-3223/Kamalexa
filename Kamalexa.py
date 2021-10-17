@@ -66,6 +66,8 @@ if __name__ == "__main__":
             ##                query = query.replace('experiment' , '')
             ##                pywhatkit.info(query , lines = 2)
 
+            elif 'open youtube' in query:
+                webbrowser.open("youtube.com")
 
             elif 'play' in query:
                 query = query.replace('play', '')
