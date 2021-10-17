@@ -104,6 +104,10 @@ if __name__ == "__main__":
                 webbrowser.open("https://www.facebook.com/profile.php?id=100014358135907")
                 speak("Opening Facebook")
 
+            elif 'open twitter' in query:
+                webbrowser.open("https://www.twitter.com")
+                speak("Opening Twitter")
+
             
             elif 'open instagram' in query:
                 webbrowser.open("https://www.instagram.com/kamalpreet__singh__/")
