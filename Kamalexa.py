@@ -75,6 +75,12 @@ if __name__ == "__main__":
                 print("Playing...")
                 speak("Playing...")
 
+            elif 'open google' in query:
+                webbrowser.open("google.com")
+
+            elif 'open whatsapp' in query:
+                webbrowser.open("https://web.whatsapp.com/")
+
 
             elif 'play music' in query:
                 music_dir = 'D:\\Songs'
